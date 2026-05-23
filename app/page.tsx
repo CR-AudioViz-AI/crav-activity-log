@@ -1,11 +1,11 @@
 "use client";
 // app/page.tsx — Javari Activity · CR AudioViz AI · EIN 39-3646201 · May 2026
 import { useState } from "react";
-const T=[{"i": "\ud83c\udf89", "l": "Event Ideas", "d": "Activity recommendations", "h": "/events"}, {"i": "\ud83d\udccb", "l": "Activity Plan", "d": "Detailed activity planning", "h": "/plan"}, {"i": "\ud83c\udf1f", "l": "Local Guide", "d": "Local activity discovery", "h": "/local"}, {"i": "\ud83d\udc65", "l": "Group Activities", "d": "Team and group events", "h": "/group"}];
+const T=[{"i": "\ud83c\udf89", "l": "Event Ideas", "d": "Activity recommendations", "h": "/events"}, {"i": "\ud83d\udccb", "l": "Activity Plan", "d": "Detailed planning", "h": "/plan"}, {"i": "\ud83c\udf1f", "l": "Local Guide", "d": "Local activity discovery", "h": "/local"}, {"i": "\ud83d\udc65", "l": "Group Activities", "d": "Team events", "h": "/group"}];
 export default function P() {
   const [i,setI]=useState(""); const [o,setO]=useState(""); const [l,setL]=useState(false);
   async function go() { if(!i.trim())return; setL(true);setO("");
-    try { const r=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:[{role:"user",content:i}],stream:false,systemOverride:"You are an activity and events expert."})});
+    try { const r=await fetch("/api/chat",{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({messages:[{role:"user",content:i}],stream:false,systemOverride:"You are an activities and events expert."})});
       const d=await r.json(); setO(d?.choices?.[0]?.message?.content||d?.content||"Error.");
     } catch {setO("Error.");} setL(false); }
   return (<div style={{minHeight:"100vh",background:"#040912",color:"#e2e8f0",fontFamily:"system-ui"}}>
@@ -15,11 +15,11 @@ export default function P() {
     </nav>
     <section style={{background:"linear-gradient(135deg,#1E3A5F,#040912)",padding:"48px 24px 40px",textAlign:"center"}}>
       <h1 style={{fontSize:"clamp(22px,4vw,42px)",fontWeight:900,color:"#fff",margin:"0 0 10px",lineHeight:1.05}}>Javari<br/><span style={{color:"#FF0800"}}>Activity Hub</span></h1>
-      <p style={{color:"rgba(255,255,255,0.7)",fontSize:15,margin:0}}>Discover, plan, and organize activities for every occasion.</p>
+      <p style={{color:"rgba(255,255,255,0.7)",fontSize:15,margin:0}}>Discover, plan, and organize activities for any occasion.</p>
     </section>
     <section style={{maxWidth:700,margin:"0 auto",padding:"24px 20px 0"}}>
       <div style={{background:"#0F1F32",border:"1px solid rgba(0,180,216,0.12)",borderRadius:14,padding:"18px 22px"}}>
-        <div style={{display:"flex",gap:8}}><input value={i} onChange={e=>setI(e.target.value)} onKeyDown={e=>e.key==="Enter"&&go()} placeholder="Suggest activities for: team of 10 mixed ages Naples FL weekend" style={{flex:1,background:"#172D48",border:"1px solid rgba(0,180,216,0.15)",borderRadius:8,padding:"10px 12px",color:"#e2e8f0",fontSize:13,outline:"none",fontFamily:"system-ui"}}/>
+        <div style={{display:"flex",gap:8}}><input value={i} onChange={e=>setI(e.target.value)} onKeyDown={e=>e.key==="Enter"&&go()} placeholder="Suggest team building activities for 20 people in Naples FL" style={{flex:1,background:"#172D48",border:"1px solid rgba(0,180,216,0.15)",borderRadius:8,padding:"10px 12px",color:"#e2e8f0",fontSize:13,outline:"none",fontFamily:"system-ui"}}/>
         <button onClick={go} disabled={l||!i.trim()} style={{background:l||!i.trim()?"#0F1F32":"#1E3A5F",color:l||!i.trim()?"#374151":"#FF0800",border:"1px solid rgba(0,180,216,0.2)",borderRadius:8,padding:"10px 18px",fontSize:13,fontWeight:700,cursor:l||!i.trim()?"not-allowed":"pointer",fontFamily:"system-ui"}}>{l?"...":"Go"}</button></div>
         {o&&<pre style={{marginTop:12,padding:"12px",background:"rgba(0,180,216,0.05)",border:"1px solid rgba(0,180,216,0.1)",borderRadius:8,fontSize:13,color:"#e2e8f0",lineHeight:1.65,whiteSpace:"pre-wrap",fontFamily:"system-ui",maxHeight:300,overflowY:"auto",margin:"12px 0 0"}}>{o}</pre>}
       </div>
