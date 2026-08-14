@@ -100,7 +100,7 @@ export async function getOrgBySlug(slug: string) {
  * Get default organization from environment
  */
 export function getDefaultOrgSlug(): string {
-  return process.env.DEFAULT_ORG_SLUG || 'crav';
+  return process.env.DEFAULT_ORG_SLUG || 'javari';
 }
 
 /**

@@ -1,5 +1,5 @@
 {
-  "name": "crav-bot-activity-log",
+  "name": "javari-bot-activity-log",
   "version": "1.0.0",
   "description": "Enterprise-grade bot/avatar activity monitoring dashboard with multi-tenant support, analytics, and ticket integration",
   "private": true,

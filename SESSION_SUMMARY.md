@@ -40,7 +40,7 @@ This is like trying to build a house when the foundation hasn't been poured yet!
 - **Size:** 669 lines
 - **Contains:** All 4 migrations in correct order
 - **Creates:** 8 tables, 4 functions, RLS policies, indexes
-- **Location:** https://github.com/CR-AudioViz-AI/crav-bot-activity-log/blob/main/supabase/COMPLETE_MIGRATION.sql
+- **Location:** https://github.com/CR-AudioViz-AI/javari-bot-activity-log/blob/main/supabase/COMPLETE_MIGRATION.sql
 
 ### 2. Wrote Comprehensive Instructions
 - **File:** `MIGRATION_INSTRUCTIONS.md`
@@ -49,12 +49,12 @@ This is like trying to build a house when the foundation hasn't been poured yet!
   - Command-line option for psql users
   - Verification steps
   - Troubleshooting guide
-- **Location:** https://github.com/CR-AudioViz-AI/crav-bot-activity-log/blob/main/MIGRATION_INSTRUCTIONS.md
+- **Location:** https://github.com/CR-AudioViz-AI/javari-bot-activity-log/blob/main/MIGRATION_INSTRUCTIONS.md
 
 ### 3. Updated README
 - **Added:** Prominent migration requirement notice
 - **Includes:** Quick start guide
-- **Location:** https://github.com/CR-AudioViz-AI/crav-bot-activity-log
+- **Location:** https://github.com/CR-AudioViz-AI/javari-bot-activity-log
 
 ### 4. Applied Type Assertion Workarounds
 - **Files Modified:** `app/api/bots/[handle]/pause/route.ts`
@@ -71,14 +71,14 @@ This is like trying to build a house when the foundation hasn't been poured yet!
 **Option A: Supabase Dashboard (Easiest)**
 1. Open: https://supabase.com/dashboard/project/kteobfyferrukqeolofj/sql
 2. Click "New Query"
-3. Copy contents of: https://raw.githubusercontent.com/CR-AudioViz-AI/crav-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
+3. Copy contents of: https://raw.githubusercontent.com/CR-AudioViz-AI/javari-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
 4. Paste into editor
 5. Click "Run" or press Ctrl+Enter
 6. Should complete in ~10 seconds
 
 **Option B: Command Line (If you have psql)**
 ```bash
-curl -o migration.sql https://raw.githubusercontent.com/CR-AudioViz-AI/crav-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
+curl -o migration.sql https://raw.githubusercontent.com/CR-AudioViz-AI/javari-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
 
 PGPASSWORD="oce@N251812345" psql \
   -h aws-0-us-east-1.pooler.supabase.com \

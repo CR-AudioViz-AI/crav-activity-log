@@ -5,7 +5,7 @@ import { getErrorMessage, logError, formatApiError } from '@/lib/utils/error-uti
 // Load environment variables
 const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
 const SUPABASE_SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE!;
-const DEFAULT_ORG_SLUG = process.env.DEFAULT_ORG_SLUG || 'crav';
+const DEFAULT_ORG_SLUG = process.env.DEFAULT_ORG_SLUG || 'javari';
 const DEV_USER_ID = process.env.DEV_USER_ID;
 
 if (!SUPABASE_URL || !SUPABASE_SERVICE_ROLE) {

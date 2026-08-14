@@ -1,4 +1,4 @@
-# CRAV Bot/Avatar Activity Log
+# javari Bot/Avatar Activity Log
 
 > ⚠️ **SETUP REQUIRED:** Before deployment works, you must run the database migrations.  
 > **See: [MIGRATION_INSTRUCTIONS.md](./MIGRATION_INSTRUCTIONS.md)** for step-by-step setup (5 minutes)
@@ -66,7 +66,7 @@ NEXT_PUBLIC_SUPABASE_ANON_KEY=your-anon-key
 SUPABASE_SERVICE_ROLE=your-service-role-key
 
 # Organization
-DEFAULT_ORG_SLUG=crav
+DEFAULT_ORG_SLUG=javari
 DEV_USER_ID=your-user-uuid
 
 # Feature Flags

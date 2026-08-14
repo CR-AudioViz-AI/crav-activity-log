@@ -1,5 +1,5 @@
 -- ============================================================
--- CRAV BOT ACTIVITY LOG - COMPLETE DATABASE MIGRATION
+-- javari BOT ACTIVITY LOG - COMPLETE DATABASE MIGRATION
 -- Run this in Supabase SQL Editor
 -- ============================================================
 
@@ -557,7 +557,7 @@ COMMENT ON FUNCTION get_bot_summary IS 'Returns summary statistics for bot dashb
 -- ============================================================================
 
 INSERT INTO organizations (slug, name, metadata)
-VALUES ('crav', 'CR AudioViz AI', '{"type": "default", "created_by": "seed_migration"}')
+VALUES ('javari', 'CR AudioViz AI', '{"type": "default", "created_by": "seed_migration"}')
 ON CONFLICT (slug) DO NOTHING;
 
 -- ============================================================================
@@ -571,7 +571,7 @@ DECLARE
   v_bot_id UUID;
 BEGIN
   -- Get org_id
-  SELECT id INTO v_org_id FROM organizations WHERE slug = 'crav';
+  SELECT id INTO v_org_id FROM organizations WHERE slug = 'javari';
   
   IF v_org_id IS NULL THEN
     RAISE EXCEPTION 'Organization not found. Run base schema migration first.';
@@ -635,7 +635,7 @@ BEGIN
   RAISE NOTICE '';
   RAISE NOTICE 'INSERT INTO members (org_id, user_id, role)';
   RAISE NOTICE 'VALUES (';
-  RAISE NOTICE '  (SELECT id FROM organizations WHERE slug = ''crav''),';
+  RAISE NOTICE '  (SELECT id FROM organizations WHERE slug = ''javari''),';
   RAISE NOTICE '  ''YOUR_USER_ID'',';
   RAISE NOTICE '  ''admin''';
   RAISE NOTICE ');';
@@ -653,7 +653,7 @@ DECLARE
   v_project_count INTEGER;
   v_bot_count INTEGER;
 BEGIN
-  SELECT COUNT(*) INTO v_org_count FROM organizations WHERE slug = 'crav';
+  SELECT COUNT(*) INTO v_org_count FROM organizations WHERE slug = 'javari';
   SELECT COUNT(*) INTO v_project_count FROM projects WHERE slug = 'main';
   SELECT COUNT(*) INTO v_bot_count FROM bots WHERE handle = 'jabari';
   

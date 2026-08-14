@@ -19,7 +19,7 @@ The TypeScript build failures are happening because **the database tables don't 
    - Click "New Query" button
 
 3. **Copy Migration SQL:**
-   - Download: https://raw.githubusercontent.com/CR-AudioViz-AI/crav-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
+   - Download: https://raw.githubusercontent.com/CR-AudioViz-AI/javari-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
    - Or use the file at: `supabase/COMPLETE_MIGRATION.sql` in your repo
 
 4. **Paste and Run:**
@@ -45,7 +45,7 @@ The TypeScript build failures are happening because **the database tables don't 
 
 ```bash
 # Download migration
-curl -o migration.sql https://raw.githubusercontent.com/CR-AudioViz-AI/crav-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
+curl -o migration.sql https://raw.githubusercontent.com/CR-AudioViz-AI/javari-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
 
 # Run migration (replace with your actual connection string)
 PGPASSWORD="oce@N251812345" psql \
@@ -134,8 +134,8 @@ After running migrations:
 ---
 
 **File Location:** `supabase/COMPLETE_MIGRATION.sql`  
-**GitHub URL:** https://github.com/CR-AudioViz-AI/crav-bot-activity-log/blob/main/supabase/COMPLETE_MIGRATION.sql  
-**Raw URL:** https://raw.githubusercontent.com/CR-AudioViz-AI/crav-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
+**GitHub URL:** https://github.com/CR-AudioViz-AI/javari-bot-activity-log/blob/main/supabase/COMPLETE_MIGRATION.sql  
+**Raw URL:** https://raw.githubusercontent.com/CR-AudioViz-AI/javari-bot-activity-log/main/supabase/COMPLETE_MIGRATION.sql
 
 ---
 
