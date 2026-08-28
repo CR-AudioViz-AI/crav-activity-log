@@ -1,9 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
 import { createHmac } from 'crypto';
 import { getErrorMessage, logError, formatApiError } from '@/lib/utils/error-utils';
+import { supabaseUrl } from "@craudioviz/platform-sdk";
 
 // Load environment variables
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const SUPABASE_URL = supabaseUrl();
 const SUPABASE_SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE!;
 const API_URL = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
 

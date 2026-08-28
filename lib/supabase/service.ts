@@ -1,5 +1,6 @@
 import { createClient } from '@supabase/supabase-js';
 import type { Database } from './types';
+import { supabaseUrl } from "@craudioviz/platform-sdk";
 
 if (!process.env.SUPABASE_SERVICE_ROLE) {
   throw new Error('Missing SUPABASE_SERVICE_ROLE environment variable');
@@ -7,7 +8,7 @@ if (!process.env.SUPABASE_SERVICE_ROLE) {
 
 export const createServiceClient = () =>
   createClient<Database>(
-    process.env.NEXT_PUBLIC_SUPABASE_URL!,
+    supabaseUrl(),
     process.env.SUPABASE_SERVICE_ROLE!,
     {
       auth: {

@@ -1,9 +1,10 @@
 import { createClient } from '@supabase/supabase-js';
 import { randomBytes } from 'crypto';
 import { getErrorMessage, logError, formatApiError } from '@/lib/utils/error-utils';
+import { supabaseUrl } from "@craudioviz/platform-sdk";
 
 // Load environment variables
-const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL!;
+const SUPABASE_URL = supabaseUrl();
 const SUPABASE_SERVICE_ROLE = process.env.SUPABASE_SERVICE_ROLE!;
 const DEFAULT_ORG_SLUG = process.env.DEFAULT_ORG_SLUG || 'javari';
 const DEV_USER_ID = process.env.DEV_USER_ID;

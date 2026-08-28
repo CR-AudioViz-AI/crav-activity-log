@@ -31,7 +31,8 @@
     "recharts": "^2.12.0",
     "tailwind-merge": "^2.2.1",
     "tailwindcss-animate": "^1.0.7",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "@craudioviz/platform-sdk": "git+https://github.com/CR-AudioViz-AI/platform-sdk.git"
   },
   "devDependencies": {
     "@types/node": "^20.11.17",
