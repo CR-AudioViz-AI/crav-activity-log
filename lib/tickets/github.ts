@@ -46,7 +46,7 @@ export class GitHubProvider implements TicketProvider {
         deepLink: this.generateDeepLink(ticketKey),
       };
     } catch (error: unknown) {
-      logError(\'Error fetching GitHub ticket:\', error);
+      logError('Error fetching GitHub ticket:', error);
       return null;
     }
   }
