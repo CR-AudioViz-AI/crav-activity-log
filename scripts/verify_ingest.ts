@@ -136,7 +136,7 @@ async function verify() {
     console.log('  • Idempotency ✓');
     console.log('═══════════════════════════════════════════════════════\n');
   } catch (error: unknown) {
-    logError(\'\n❌ Verification failed:\', error);
+    logError('\n❌ Verification failed:', error);
     process.exit(1);
   }
 }
