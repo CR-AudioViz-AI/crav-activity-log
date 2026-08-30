@@ -37,7 +37,7 @@ export class JiraProvider implements TicketProvider {
         deepLink: this.generateDeepLink(ticketKey),
       };
     } catch (error: unknown) {
-      logError(\'Error fetching Jira ticket:\', error);
+      logError('Error fetching Jira ticket:', error);
       return null;
     }
   }
