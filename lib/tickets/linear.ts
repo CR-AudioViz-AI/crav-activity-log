@@ -62,7 +62,7 @@ export class LinearProvider implements TicketProvider {
         deepLink: issue.url,
       };
     } catch (error: unknown) {
-      logError(\'Error fetching Linear ticket:\', error);
+      logError('Error fetching Linear ticket:', error);
       return null;
     }
   }
