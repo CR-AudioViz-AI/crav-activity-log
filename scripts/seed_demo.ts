@@ -134,7 +134,7 @@ async function seed() {
     console.log(`Bot: ${bot.display_name} (@${bot.handle})`);
     console.log('═══════════════════════════════════════════════════════\n');
   } catch (error: unknown) {
-    logError(\'\n❌ Seed failed:\', error);
+    logError('\n❌ Seed failed:', error);
     process.exit(1);
   }
 }
