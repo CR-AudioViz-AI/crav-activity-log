@@ -1,7 +1,21 @@
 "use client";
 // app/page.tsx — Javari Activity · CR AudioViz AI · EIN 39-3646201 · May 2026
+//
+// 2026-09-03: tiles pointing at pages that do not exist now render as "Coming
+// soon" instead of linking to a 404.
+//
+// An ecosystem sweep with Javari Verify found these advertised as working
+// navigation. They were never built, and a visitor clicking one got an error page.
+//
+// NOT stubbed with placeholder pages, deliberately. A route that returns 200 with
+// a header, a footer and nothing between them is the exact defect
+// lib/modules/checks/hollow-response.ts exists to detect - it would trade a
+// visible 404 for a silent lie, and the next scan would flag it.
+//
+// Saying "coming soon" is honest, keeps the roadmap visible, and leaves the real
+// work recorded rather than papered over.
 import { useState } from "react";
-const T=[{"i": "\ud83c\udf89", "l": "Event Ideas", "d": "Activity recommendations", "h": "/events"}, {"i": "\ud83d\udccb", "l": "Activity Plan", "d": "Detailed planning", "h": "/plan"}, {"i": "\ud83c\udf1f", "l": "Local Guide", "d": "Local activity discovery", "h": "/local"}, {"i": "\ud83d\udc65", "l": "Group Activities", "d": "Team events", "h": "/group"}];
+const T=[{"i": "\ud83c\udf89", "l": "Event Ideas", "d": "Activity recommendations", "h": "/events", "soon": true}, {"i": "\ud83d\udccb", "l": "Activity Plan", "d": "Detailed planning", "h": "/plan", "soon": true}, {"i": "\ud83c\udf1f", "l": "Local Guide", "d": "Local activity discovery", "h": "/local", "soon": true}, {"i": "\ud83d\udc65", "l": "Group Activities", "d": "Team events", "h": "/group", "soon": true}];
 export default function P() {
   const [i,setI]=useState(""); const [o,setO]=useState(""); const [l,setL]=useState(false);
   async function go() { if(!i.trim())return; setL(true);setO("");
@@ -25,7 +39,9 @@ export default function P() {
       </div>
     </section>
     <section style={{maxWidth:960,margin:"0 auto",padding:"28px 20px 64px"}}><div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(190px,1fr))",gap:10}}>
-      {T.map((t:any)=>(<a key={t.h} href={t.h} style={{background:"#0F1F32",border:"1px solid rgba(0,180,216,0.08)",borderRadius:12,padding:"16px",textDecoration:"none",display:"block"}}><span style={{fontSize:24,display:"block",marginBottom:7}}>{t.i}</span><div style={{fontWeight:700,fontSize:13,color:"#e2e8f0",marginBottom:3}}>{t.l}</div><div style={{fontSize:11,color:"#6B7280",lineHeight:1.4}}>{t.d}</div></a>))}
+      {T.map((t:any)=>t.soon
+        ? (<div key={t.h} style={{background:"#0F1F32",border:"1px solid rgba(0,180,216,0.08)",borderRadius:12,padding:"16px",display:"block",opacity:0.55}}><span style={{fontSize:24,display:"block",marginBottom:7}}>{t.i}</span><div style={{fontWeight:700,fontSize:13,color:"#e2e8f0",marginBottom:3}}>{t.l}</div><div style={{fontSize:11,color:"#6B7280",lineHeight:1.4}}>{t.d}</div><div style={{fontSize:10,color:"#00B4D8",marginTop:6,fontWeight:700,letterSpacing:0.4}}>COMING SOON</div></div>)
+        : (<a key={t.h} href={t.h} style={{background:"#0F1F32",border:"1px solid rgba(0,180,216,0.08)",borderRadius:12,padding:"16px",textDecoration:"none",display:"block"}}><span style={{fontSize:24,display:"block",marginBottom:7}}>{t.i}</span><div style={{fontWeight:700,fontSize:13,color:"#e2e8f0",marginBottom:3}}>{t.l}</div><div style={{fontSize:11,color:"#6B7280",lineHeight:1.4}}>{t.d}</div></a>))}
     </div></section>
     <footer style={{borderTop:"1px solid rgba(0,180,216,0.08)",padding:"12px 24px",textAlign:"center"}}><p style={{color:"#374151",fontSize:11,margin:0}}>© 2026 CR AudioViz AI, LLC — EIN: 39-3646201</p></footer>
   </div>);
