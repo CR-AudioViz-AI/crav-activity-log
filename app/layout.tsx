@@ -3,6 +3,15 @@
 import type { Metadata } from 'next'
 export const dynamic = 'force-dynamic'
 export const metadata: Metadata = {
+  // 2026-09-04: added after Javari Verify found no canonical on this origin.
+  // Without one, the same page at the apex, at www, with a trailing slash and
+  // with tracking parameters is treated as four competing pages and the ranking
+  // is split between them.
+  metadataBase: new URL('https://javariactivity.com'),
+  // './' resolves per page rather than pinning every route to the homepage,
+  // which is the defect found on craudiovizai.com where /apps, /contact and
+  // /features all declared themselves duplicates of the home page.
+  alternates: { canonical: './' },
   title: 'Javari Activity Log',
   description: 'Platform activity monitoring and audit trail system.',
   openGraph: { title: 'Javari Activity Log', description: 'Platform activity monitoring and audit trail system.', type: 'website' },
