@@ -10,7 +10,8 @@
     "lint": "next lint",
     "type-check": "tsc --noEmit",
     "seed": "tsx scripts/seed_demo.ts",
-    "verify": "tsx scripts/verify_ingest.ts"
+    "verify": "tsx scripts/verify_ingest.ts",
+    "prebuild": "node scripts/audit-route-auth.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.39.7",
