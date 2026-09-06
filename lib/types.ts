@@ -2,7 +2,7 @@ import { Database } from './supabase/types';
 
 // Export database row types for easier use in components
 export type Bot = Database['public']['Tables']['bots']['Row'];
-export type Activity = Database['public']['Tables']['activities']['Row'];
+export type Activity = Database['public']['Tables']['bv_activities']['Row'];
 export type Ticket = Database['public']['Tables']['tickets']['Row'];
 export type Organization = Database['public']['Tables']['organizations']['Row'];
 export type Project = Database['public']['Tables']['projects']['Row'];
