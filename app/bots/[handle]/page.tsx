@@ -65,7 +65,7 @@ export default async function BotDashboardPage({ params }: PageProps) {
 
   // Get recent activities
   const { data: activitiesData, error: activitiesError } = await supabase
-    .from('activities')
+    .from('bv_activities')
     .select('*')
     .eq('bot_id', bot.id)
     .order('occurred_at', { ascending: false })
