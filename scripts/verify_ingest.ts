@@ -89,7 +89,7 @@ async function verify() {
     // 4. Verify in database
     console.log('4️⃣  Verifying in database...');
     const { data: activity, error: activityError } = await supabase
-      .from('activities')
+      .from('bv_activities')
       .select('*')
       .eq('id', result.activityId)
       .single();
