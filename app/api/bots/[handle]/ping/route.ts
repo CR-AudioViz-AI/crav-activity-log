@@ -69,7 +69,7 @@ export async function POST(
     };
 
     const { data: activity, error: insertError } = await (supabase as any)
-      .from('activities')
+      .from('bv_activities')
       .insert(testActivity)
       .select('id')
       .single();
