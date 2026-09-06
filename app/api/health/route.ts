@@ -8,7 +8,7 @@ export async function GET() {
 
     // Check database connection with type assertion
     const { data: activities, error } = await (supabase as any)
-      .from('activities')
+      .from('bv_activities')
       .select('occurred_at')
       .order('occurred_at', { ascending: false })
       .limit(1);
