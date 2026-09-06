@@ -119,7 +119,7 @@ export async function POST(request: NextRequest) {
 
     // Check for duplicate event_uid
     const { data: existingActivity } = await (supabase as any)
-      .from('activities')
+      .from('bv_activities')
       .select('id')
       .eq('bot_id', bot.id)
       .eq('event_uid', activityData.event_uid)
@@ -163,7 +163,7 @@ export async function POST(request: NextRequest) {
     };
 
     const { data: insertedActivity, error: insertError } = await (supabase as any)
-      .from('activities')
+      .from('bv_activities')
       .insert(activity)
       .select('id')
       .single();
